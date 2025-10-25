@@ -1,28 +1,22 @@
-import { createSlice } from '@reduxjs/toolkit'
-import type { PayloadAction } from '@reduxjs/toolkit'
 import type { ISubscription } from './types'
 
-interface State {
-  items: ISubscription[]
+// Lightweight utility replacements for the original slice exports.
+let _items: ISubscription[] = []
+
+export function setAll(items: ISubscription[]) {
+  _items = items
 }
 
-const initialState: State = { items: [] }
+export function add(sub: ISubscription) {
+  _items.push(sub)
+}
 
-const slice = createSlice({
-  name: 'subscriptions',
-  initialState,
-  reducers: {
-    setAll(state, action: PayloadAction<ISubscription[]>) {
-      state.items = action.payload
-    },
-    add(state, action: PayloadAction<ISubscription>) {
-      state.items.push(action.payload)
-    },
-    remove(state, action: PayloadAction<string>) {
-      state.items = state.items.filter((s) => s.id !== action.payload)
-    },
-  },
-})
+export function remove(id: string) {
+  _items = _items.filter((s) => s.id !== id)
+}
 
-export const { setAll, add, remove } = slice.actions
-export default slice.reducer
+export function getAll() {
+  return _items
+}
+
+export default { setAll, add, remove, getAll }
