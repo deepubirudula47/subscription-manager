@@ -1,0 +1,9 @@
+{
+  "title": "Subscription Manager",
+  "subtitle": "Manage your recurring services",
+  "labels": {
+    "addSubscription": "Add subscription",
+    "name": "Name",
+    "price": "Price"
+  }
+}
