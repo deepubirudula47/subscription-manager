@@ -1,21 +1,19 @@
 import { describe, it, expect } from 'vitest'
 import React from 'react'
 import { createRoot } from 'react-dom/client'
-import App from './App'
+import { MemoryRouter } from 'react-router-dom'
+import Home from './index'
 
-describe('App', () => {
-  it('renders title', async () => {
+describe('Home page', () => {
+  it('renders hero', async () => {
     const container = document.createElement('div')
     document.body.appendChild(container)
     const root = createRoot(container)
-    root.render(React.createElement(App))
-
-    // wait a tick for React to commit updates
-    await new Promise((resolve) => setTimeout(resolve, 0))
-
+    root.render(
+      React.createElement(MemoryRouter, null, React.createElement(Home)),
+    )
+    await new Promise((r) => setTimeout(r, 0))
     expect(document.body.textContent).toContain('Subscription Manager')
-
-    // cleanup
     root.unmount()
     container.remove()
   })
