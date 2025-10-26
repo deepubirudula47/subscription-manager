@@ -1,9 +1,38 @@
 {
   "title": "Subscription Manager",
   "subtitle": "Manage your recurring services",
+  "header": {
+    "brand": "SubManager",
+    "nav": ["Dashboard", "Plans", "Invoices", "Customers"]
+  },
+  "footer": {
+    "copyright": "© 2025 SubManager. All rights reserved."
+  },
   "labels": {
     "addSubscription": "Add subscription",
     "name": "Name",
     "price": "Price"
+  }
+  ,
+  "auth": {
+    "welcome": "Welcome",
+    "login": {
+      "title": "Login",
+      "phone": "Phone",
+      "password": "Password",
+      "submit": "Login"
+    },
+    "register": {
+      "title": "Create account",
+      "name": "Full name",
+      "phone": "Phone",
+      "password": "Password",
+      "submit": "Create account"
+    }
+  },
+  "sample": {
+    "title": "Sample Page",
+    "lead": "This is a sample page demonstrating how to use the shared Header and Footer components via the Layout.",
+    "help": "Add your page content here — forms, lists, or whatever you need for the Subscription Manager."
   }
 }
